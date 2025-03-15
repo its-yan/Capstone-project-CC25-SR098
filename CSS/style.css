@@ -1,0 +1,122 @@
+/* UNIVERSAL */
+/* Reset margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Background */
+  body {
+    background-image: url(Img/);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    background-attachment: fixed;
+  }
+  
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 0.1px;
+    transition: ease-out 0.5s;
+  }
+  
+  /* END UNIVERSAL */
+
+  /* MAIN PAGE */
+  .Con-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+  }
+  .con-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1vw;
+    background: linear-gradient(
+      90deg,
+      #000000 20%,
+      #31511e 40%,
+      #859f3d 60%,
+      #b2c9ad 70%
+    );
+    font-size: 1.5vw;
+    opacity: 80%;
+    text-decoration-color: none;
+  }
+  .con-nav ul {
+    color: white;
+    list-style: none;
+    display: flex;
+    gap: 2vw;
+  }
+  
+  .con-nav ul li {
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.5vw 1vw;
+    font-size: 2.5vw;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .con-nav ul li:hover {
+    background-color: #8f8f8f;
+
+}
+  
+  .con-nav ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  /* Side Navigation Menu */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #67a05d;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #eaeaea;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #d5ff7c;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .sidenav-trigger {
+    display: none;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+  }
+  
