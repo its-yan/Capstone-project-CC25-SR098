@@ -1,36 +1,117 @@
-/* UNIVERSAL */
-/* Reset margins and padding */
+/* Reset dan variabel warna */
+:root {
+    --primary-green: #00C853;
+    --dark-green: #006400;
+    --background-dark: #1a1a1a;
+    --text-white: #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Background */
-  body {
-    background-image: url(Img/);
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    width: 100%;
-    overflow-x: hidden;
-    background-attachment: fixed;
-  }
-  
-  /* Scrollbar */
-  ::-webkit-scrollbar {
-    width: 0.1px;
-    transition: ease-out 0.5s;
-  }
-  
-  /* END UNIVERSAL */
+}
 
-  /* MAIN PAGE */
-  /* ...existing code... */
+body {
+    background-color: var(--background-dark);
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+
+/* Header dan Navigasi */
+.con-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--primary-green);
+    border-radius: 0 0 25px 25px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.logo {
+    height: 40px;
+}
+
+.nav-right {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-button {
+    background-color: var(--dark-green);
+    color: var(--text-white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-section h1 {
+    color: var(--primary-green);
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.copyright {
+    background-color: var(--dark-green);
+    color: var(--text-white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    margin-top: 2rem;
+}
+
+.scroll-arrow {
+    color: var(--primary-green);
+    font-size: 3rem;
+    margin-top: 2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-button {
+        padding: 0.6rem 1rem;
+    }
+}
 
 .con-nav {
   display: flex;
@@ -38,17 +119,17 @@
   justify-content: space-between;
   width: 100%;
   padding: 1vw;
-  background-color: #67a05d; /* Updated background color */
+  background-color: #67a05d; 
   font-size: 1.5vw;
-  opacity: 100%; /* Updated opacity */
+  opacity: 100%;
   text-decoration-color: none;
-  position: fixed; /* Added to fix the navbar */
-  top: 0; /* Added to fix the navbar */
-  z-index: 1000; /* Ensure it stays on top */
+  position: fixed; 
+  top: 0; 
+  z-index: 1000; 
 }
 
 .con-nav img {
-  height: 50px; /* Adjust logo size */
+  height: 50px; 
 }
 
 .con-nav ul {
@@ -63,18 +144,16 @@
 }
 
 .con-nav ul li a {
-  color: #ffffff; /* Updated text color */
+  color: #ffffff; 
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 5px;
-  background-color: #31511e; /* Updated background color */
+  background-color: #31511e; 
 }
 
 .con-nav ul li a:hover {
-  background-color: #859f3d; /* Updated hover background color */
+  background-color: #859f3d; 
 }
-
-/* ...existing code... */
 
 .sidenav {
   height: 100%;
@@ -123,18 +202,13 @@
   }
 }
 
-.Home-text {
+.hero-section {
   text-align: center;
-  color: #67a05d; /* Updated text color */
-  margin-top: 100px; /* Adjust margin to avoid overlap with navbar */
+  color: #67a05d; 
+  margin-top: 20vh; 
 }
 
-.Home-text h1 {
+.hero-section h1 {
   font-size: 3em;
 }
 
-.Home-text h3 {
-  font-size: 2em;
-}
-
-/* ...existing code... */
