@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,28 +9,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-left">
-                <img src="IMG/logo.png" alt="Learn+" class="logo">
+                <img src="IMG/CC25-SR098.png" alt="Learn+" class="logo" id="navToggle">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
+
             <div class="nav-center">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search articles...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
                 <a href="#" class="nav-link">Home</a>
-                <a href="#" class="nav-link">About</a>
-                <a href="#" class="nav-link">Article</a>
-                <a href="#" class="nav-link">Contact</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#articles" class="nav-link">Article</a>
+                <a href="#testimonial" class="nav-link">Testimonial</a>
+                <a href="#footer" class="nav-link">Contact</a>
             </div>
+
             <div class="nav-right">
-                <button class="login-btn">Login</button>
+                <button class="search-toggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="nav-btn"><span class="text">Login</span>
+                    <span>Sign Up</span></button>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero-section">
+        <section class="hero-section"id="#">
             <div class="hero-content">
-                <div class="hero-text">
+                <div class="hero-text" >
                     <h1>Explore, Learn,<br>and Transform</h1>
                     <button class="get-started-btn">Get Started</button>
                 </div>
@@ -43,7 +63,7 @@
             </div>
         </section>
 
-        <section class="features-section">
+        <section class="features-section" id="about">
             <h2>Why Must Learn+?</h2>
             <div class="features-grid">
                 <div class="feature-card">
@@ -70,7 +90,7 @@
             </div>
         </section>
 
-        <section class="articles-section">
+        <section class="articles-section" id="articles">
             <h2>Our Top Articles</h2>
             <div class="articles-grid">
                 <div class="article-card">
@@ -106,10 +126,10 @@
             </div>
         </section>
 
-        <section class="testimonials-section">
+        <section class="testimonials-section" id="testimonial">
             <h2>What They Say</h2>
             <h3>About Us</h3>
-            
+
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="user-info">
@@ -119,7 +139,7 @@
                             <p class="user-handle">@johnd...</p>
                         </div>
                     </div>
-                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elitsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p class="testimonial-text">o</p>
                 </div>
 
                 <div class="testimonial-card">
@@ -130,7 +150,7 @@
                             <p class="user-handle">@johnd...</p>
                         </div>
                     </div>
-                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p class="testimonial-text">o</p>
                 </div>
 
                 <div class="testimonial-card">
@@ -141,7 +161,7 @@
                             <p class="user-handle">@johnd...</p>
                         </div>
                     </div>
-                    <p class="testimonial-text">Lorem ipsum dolor sit amet.</p>
+                    <p class="testimonial-text">L</p>
                 </div>
 
                 <div class="testimonial-card">
@@ -152,7 +172,7 @@
                             <p class="user-handle">@johnd...</p>
                         </div>
                     </div>
-                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elitsed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p class="testimonial-text">o</p>
                 </div>
 
                 <div class="testimonial-card">
@@ -163,7 +183,7 @@
                             <p class="user-handle">@johnd...</p>
                         </div>
                     </div>
-                    <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p class="testimonial-text">o</p>
                 </div>
 
                 <div class="testimonial-card">
@@ -174,12 +194,12 @@
                             <p class="user-handle">@johnd...</p>
                         </div>
                     </div>
-                    <p class="testimonial-text">Lorem ipsum dolor sit amet.</p>
+                    <p class="testimonial-text">o</p>
                 </div>
             </div>
         </section>
 
-        <footer class="footer">
+        <footer class="footer" id="footer">
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3 class="footer-logo">learns</h3>
@@ -226,9 +246,18 @@
                 </div>
             </div>
             <div class="footer-bottom">
+                <button class="button">
+                    <svg class="svgIcon" viewBox="0 0 384 512">
+                        <path
+                            d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z">
+                            <a href="#Home"></path>
+                    </svg>
+                </button>
+
                 <p>&copy; 2025 learns. All rights reserved</p>
             </div>
         </footer>
     </main>
 </body>
+
 </html>
