@@ -302,6 +302,34 @@ class BackToTop {
     }
 }
 
+// Literatur Card Interaction
+class LiteraturCard {
+    constructor() {
+        this.cards = document.querySelectorAll('.literatur-card');
+        this.readMoreBtns = document.querySelectorAll('.read-more-btn');
+        this.langTags = document.querySelectorAll('.lang-tag');
+        this.init();
+    }
+
+    init() {
+        this.setupReadMoreButtons();
+        this.setupLangTags();
+    }
+
+    filterByLanguage(lang) {
+        this.cards.forEach(card => {
+            const cardTags = Array.from(card.querySelectorAll('.lang-tag'))
+                .map(tag => tag.textContent);
+            
+            if (cardTags.includes(lang)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Auth
@@ -324,4 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize Back to Top
     new BackToTop();
+
+    // Initialize LiteraturCard
+    new LiteraturCard();
 });
