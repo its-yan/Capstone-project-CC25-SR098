@@ -1,4 +1,3 @@
-
 function openNav() {
     document.getElementById("mobileMenuBtn").style.width = "250px";
 }
@@ -11,16 +10,16 @@ function closeNav() {
 const searchArticles = () => {
     const searchInput = document.getElementById('searchInput');
     const searchTerm = searchInput.value.toLowerCase();
-    const articles = document.querySelectorAll('.article-card');
+    const literaturCards = document.querySelectorAll('.literatur-card');
 
-    articles.forEach(article => {
-        const title = article.querySelector('h3').textContent.toLowerCase();
-        const content = article.querySelector('p').textContent.toLowerCase();
+    literaturCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const content = card.querySelector('p').textContent.toLowerCase();
         
         if (title.includes(searchTerm) || content.includes(searchTerm)) {
-            article.style.display = 'block';
+            card.style.display = 'block';
         } else {
-            article.style.display = 'none';
+            card.style.display = 'none';
         }
     });
 }
@@ -73,7 +72,7 @@ class AuthManager {
     }
 
     updateUI() {
-        const loginBtn = document.querySelector('.login-btn');
+        const loginBtn = document.querySelector('.nav-btn');
         const userProfile = document.getElementById('userProfile');
         
         if (this.isLoggedIn && this.user) {
@@ -102,24 +101,27 @@ class AuthManager {
 // Contact Form Handler
 class ContactForm {
     constructor() {
-        this.form = document.getElementById('contactForm');
+        this.form = document.querySelector('.contact-form');
         this.setupListeners();
     }
 
     setupListeners() {
-        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+        if (this.form) {
+            this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+        }
     }
 
     async handleSubmit(e) {
         e.preventDefault();
-        const email = this.form.querySelector('input[type="email"]').value;
+        const emailInput = this.form.querySelector('input[type="email"]');
+        const email = emailInput.value;
         
         try {
             await this.sendContactRequest(email);
-            alert('Thank you for contacting us! We will get back to you soon.');
-            this.form.reset();
+            alert('Terima kasih telah menghubungi kami! Kami akan segera menghubungi Anda.');
+            emailInput.value = '';
         } catch (error) {
-            alert('There was an error sending your message. Please try again.');
+            alert('Terjadi kesalahan saat mengirim pesan Anda. Silakan coba lagi.');
         }
     }
 
@@ -270,6 +272,36 @@ class Navbar {
     }
 }
 
+// Back to Top functionality
+class BackToTop {
+    constructor() {
+        this.button = document.querySelector('.button');
+        this.initializeBackToTop();
+    }
+
+    initializeBackToTop() {
+        if (this.button) {
+            window.addEventListener('scroll', () => this.toggleVisibility());
+            this.button.addEventListener('click', () => this.scrollToTop());
+        }
+    }
+
+    toggleVisibility() {
+        if (window.pageYOffset > 300) {
+            this.button.style.display = 'flex';
+        } else {
+            this.button.style.display = 'none';
+        }
+    }
+
+    scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Auth
@@ -289,4 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize Navbar
     new Navbar();
+    
+    // Initialize Back to Top
+    new BackToTop();
 });
